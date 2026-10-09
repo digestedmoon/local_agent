@@ -30,7 +30,7 @@ class Agent:
 
         self.tokenizer = create_tokenizer(self.model_info)
 
-        self.contextmanager = ContextManager(tokenizer=self.tokenizer,context_window=self.model_info.context_window,max_output_tokens=2048,safety_margin=256,)
+        self.contextmanager = ContextManager(tokenizer=self.tokenizer,native_context_window=self.model_info.native_context_window,runtime_context_window=self.model_info.runtime_context_window,max_output_tokens=2048,safety_margin=256,)
 
         
     def run(self, user_input):

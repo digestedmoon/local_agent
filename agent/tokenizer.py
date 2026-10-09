@@ -8,8 +8,8 @@ class Tokenizer(ABC):
         pass 
 
 class HFTokenizer(Tokenizer):
-    def __init__(self, model_info: str):
-        self.tokenzier = AutoTokenizer.from_pretrained(model_info)
+    def __init__(self, tokenizer_name: str):
+        self.tokenzier = AutoTokenizer.from_pretrained(tokenizer_name)
 
     def count(self,messages: list[Message])->int:
         chat = [
@@ -25,6 +25,7 @@ class HFTokenizer(Tokenizer):
 def create_tokenizer(model_info: ModelInfo) -> Tokenizer:
 
     if not model_info.tokenizer_name:
+
         raise ValueError(
             f"No tokenizer available for '{model_info.name}'."
         )

@@ -32,3 +32,5 @@ data/workspaces/*
 
 # Temporary files
 *.tmp
+
+test.ipynb
